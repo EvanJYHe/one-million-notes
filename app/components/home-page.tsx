@@ -5,7 +5,6 @@ import { Hero } from "./hero";
 import { IntroSplash } from "./intro-splash";
 import { NoteDialog } from "./note-dialog";
 import { NotesBoard } from "./notes-board";
-import { SiteFooter } from "./site-footer";
 import { SiteHeader } from "./site-header";
 import type { StickyNoteData } from "../types/note";
 import { useNotes } from "../hooks/use-notes";
@@ -35,8 +34,6 @@ export function HomePage({ initialCount, initialNotes }: HomePageProps) {
           <section className="notes-section" id="notes">
             <NotesBoard notes={notes} onSelectNote={setSelectedNote} />
           </section>
-
-          <SiteFooter />
         </div>
       </main>
 
