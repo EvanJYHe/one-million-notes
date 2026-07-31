@@ -19,13 +19,6 @@ export function SiteHeader({ onAddNote }: SiteHeaderProps) {
           <span>One Million Notes</span>
         </a>
 
-        <nav className="primary-nav" aria-label="Primary navigation">
-          <a className="active" href="#home">
-            Home
-          </a>
-          <a href="#notes">Notes</a>
-        </nav>
-
         <button
           className="add-note-button"
           type="button"
