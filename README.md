@@ -22,7 +22,7 @@ visual variations derived from their position on the wall.
 | Layer | Technology |
 | --- | --- |
 | Interface | Next.js 15, React 19, TypeScript, handcrafted CSS |
-| Runtime | Cloudflare Workers via OpenNext |
+| Runtime | Cloudflare Workers via OpenNext, with a Vercel mirror |
 | Database | Cloudflare D1 |
 | Large-list rendering | `react-window` and `react-virtualized-auto-sizer` |
 | Moderation | Local validation with optional Gemini classification |
@@ -46,6 +46,11 @@ The first page load is rendered at the edge with notes read directly from D1.
 New submissions go through a same-origin API route, where length and link
 checks run before optional AI moderation. Approved notes and the public counter
 are then updated together in a D1 batch.
+
+The canonical Worker uses its native D1 binding. Hosts without D1 can set
+`NOTES_BACKEND_ORIGIN` to reuse the same server-rendered application while
+forwarding data operations to the Worker; no database credentials reach those
+deployments or the browser.
 
 ## Interesting details
 

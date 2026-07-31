@@ -20,13 +20,32 @@ type PositionRow = {
 const DEFAULT_PAGE_SIZE = 250;
 const MAX_PAGE_SIZE = 500;
 
+type NoteList = {
+  count: number;
+  notes: StickyNoteData[];
+};
+
+type CreatedNote = {
+  count: number;
+  note: StickyNoteData;
+};
+
 export async function listNotes({
   limit = DEFAULT_PAGE_SIZE,
 }: {
   limit?: number;
 } = {}) {
-  const { DB } = await getRuntimeEnv();
   const pageSize = Math.min(Math.max(Math.floor(limit), 1), MAX_PAGE_SIZE);
+  const remoteBackend = getRemoteBackendOrigin();
+
+  if (remoteBackend) {
+    return requestRemoteNotes<NoteList>(
+      remoteBackend,
+      `/api/notes?limit=${pageSize}`,
+    );
+  }
+
+  const { DB } = await getRuntimeEnv();
   const [notesResult, countResult] = await DB.batch<NoteRow | CountRow>([
     DB.prepare(
       `SELECT id, body AS note, position AS "order"
@@ -55,6 +74,16 @@ export async function listNotes({
 }
 
 export async function createNote(body: string) {
+  const remoteBackend = getRemoteBackendOrigin();
+
+  if (remoteBackend) {
+    return requestRemoteNotes<CreatedNote>(remoteBackend, "/api/notes", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: body }),
+    });
+  }
+
   const { DB } = await getRuntimeEnv();
   const id = crypto.randomUUID();
   const createdAt = Date.now();
@@ -97,4 +126,37 @@ function toStickyNote(row: NoteRow): StickyNoteData {
     note: row.note,
     order: Number(row.order),
   };
+}
+
+function getRemoteBackendOrigin() {
+  const configuredOrigin = process.env.NOTES_BACKEND_ORIGIN?.trim();
+
+  if (!configuredOrigin) {
+    return null;
+  }
+
+  const url = new URL(configuredOrigin);
+
+  if (url.protocol !== "https:" && url.protocol !== "http:") {
+    throw new Error("NOTES_BACKEND_ORIGIN must use HTTP or HTTPS");
+  }
+
+  return url.origin;
+}
+
+async function requestRemoteNotes<T>(
+  origin: string,
+  path: string,
+  init?: RequestInit,
+) {
+  const response = await fetch(`${origin}${path}`, {
+    ...init,
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`The notes backend returned ${response.status}`);
+  }
+
+  return (await response.json()) as T;
 }
