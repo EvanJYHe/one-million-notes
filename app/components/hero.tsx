@@ -10,19 +10,13 @@ export function Hero({ noteCount }: HeroProps) {
   return (
     <section className="hero" id="home">
       <div className="hero-art" aria-hidden="true">
-        <picture>
-          <source
-            media="(max-width: 620px)"
-            srcSet="/art/brand-note-icon-v4.webp"
-          />
-          <Image
-            src="/art/hero-note-stack-v4.webp"
-            alt=""
-            width={260}
-            height={195}
-            priority
-          />
-        </picture>
+        <Image
+          src="/art/hero-note-stack-v4.webp"
+          alt=""
+          width={260}
+          height={195}
+          priority
+        />
       </div>
 
       <div className="hero-copy">

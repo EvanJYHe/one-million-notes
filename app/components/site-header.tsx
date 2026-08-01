@@ -9,19 +9,13 @@ export function SiteHeader({ onAddNote }: SiteHeaderProps) {
     <header className="site-header">
       <div className="nav-shell">
         <a className="brand-lockup" href="#home" aria-label="One Million Notes home">
-          <picture className="brand-mark">
-            <source
-              media="(max-width: 620px)"
-              srcSet="/art/hero-note-stack-v4.webp"
-            />
-            <Image
-              src="/art/brand-note-icon-v4.webp"
-              alt=""
-              width={58}
-              height={58}
-              priority
-            />
-          </picture>
+          <Image
+            src="/art/brand-note-icon-v4.webp"
+            alt=""
+            width={58}
+            height={58}
+            priority
+          />
           <span>One Million Notes</span>
         </a>
 
