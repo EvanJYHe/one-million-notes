@@ -39,9 +39,9 @@ export function Hero({ noteCount }: HeroProps) {
           </svg>
         </div>
         <p>
-          A collaborative message wall for the world.
+          A public wall for passing thoughts.
           <br />
-          Share a thought, spread some joy, leave your note.
+          Leave a note. Read what others left behind.
         </p>
         <Image
           className="title-doodle title-doodle-hearts"
