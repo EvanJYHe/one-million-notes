@@ -811,7 +811,7 @@ textarea:focus-visible {
   .hero {
     grid-template-columns: minmax(0, 1fr);
     gap: 0;
-    min-height: 148px;
+    min-height: 156px;
   }
 
   .hero-art {
@@ -826,13 +826,24 @@ textarea:focus-visible {
   }
 
   .hero-copy h1 {
-    font-size: clamp(1.9rem, 8.5vw, 2.4rem);
+    font-size: clamp(2rem, 9.5vw, 2.65rem);
     letter-spacing: 0;
     text-align: center;
   }
 
   .title-accent {
-    display: none;
+    display: block;
+    width: clamp(18px, 6vw, 25px);
+    stroke-width: 8;
+  }
+
+  .title-doodle-hearts {
+    top: 52%;
+    right: 0;
+    bottom: auto;
+    display: block;
+    width: clamp(32px, 9vw, 40px);
+    height: auto;
   }
 
   .hero-copy p {
