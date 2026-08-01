@@ -364,6 +364,41 @@ textarea:focus-visible {
   text-align: center;
 }
 
+.hero-title {
+  position: relative;
+  display: inline-block;
+}
+
+.title-accent {
+  position: absolute;
+  top: 48%;
+  width: clamp(28px, 3vw, 46px);
+  height: auto;
+  overflow: visible;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 6;
+  pointer-events: none;
+}
+
+.title-accent-left {
+  left: 0;
+  stroke: #8f4c20;
+  transform: translate(-110%, -50%);
+}
+
+.title-accent-right {
+  right: 0;
+  fill: #c37b28;
+  stroke: #c37b28;
+  transform: translate(110%, -50%);
+}
+
+.title-accent-right circle {
+  stroke: none;
+}
+
 .hero-copy h1 {
   margin: 0;
   color: var(--brown);
@@ -823,6 +858,10 @@ textarea:focus-visible {
     text-align: left;
   }
 
+  .title-accent {
+    display: none;
+  }
+
   .hero-copy p {
     margin-top: 8px;
     font-size: 0.76rem;
@@ -846,57 +885,6 @@ textarea:focus-visible {
 
   .note-dialog {
     padding: 44px 24px 28px;
-  }
-}
-
-@media (min-width: 621px) and (min-height: 720px) {
-  .page-shell {
-    display: grid;
-    grid-template-rows: auto minmax(0, 1fr);
-    height: calc(100dvh - 83px);
-    padding: 14px 0 18px;
-  }
-
-  .hero {
-    height: clamp(154px, 21dvh, 210px);
-    min-height: 0;
-  }
-
-  .hero-art {
-    height: 100%;
-  }
-
-  .hero-art img {
-    width: clamp(185px, 16vw, 220px);
-    height: auto;
-    max-height: 100%;
-  }
-
-  .hero-copy h1 {
-    font-size: clamp(3.25rem, 5vw, 5.2rem);
-  }
-
-  .hero-copy p {
-    margin-top: 12px;
-    font-size: clamp(0.9rem, 1.25vw, 1.12rem);
-    line-height: 1.35;
-  }
-
-  .note-count-card {
-    padding: 18px 16px 14px;
-  }
-
-  .note-count-card p {
-    margin-top: 10px;
-  }
-
-  .notes-section {
-    min-height: 0;
-    margin-top: 12px;
-  }
-
-  .board-frame {
-    height: 100%;
   }
 }
 

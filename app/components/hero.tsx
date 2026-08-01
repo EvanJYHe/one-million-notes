@@ -20,7 +20,24 @@ export function Hero({ noteCount }: HeroProps) {
       </div>
 
       <div className="hero-copy">
-        <h1>One Million Notes</h1>
+        <div className="hero-title">
+          <svg
+            className="title-accent title-accent-left"
+            viewBox="0 0 46 64"
+            aria-hidden="true"
+          >
+            <path d="m13 8 12 16M5 32h18m-10 24 12-16" />
+          </svg>
+          <h1>One Million Notes</h1>
+          <svg
+            className="title-accent title-accent-right"
+            viewBox="0 0 46 64"
+            aria-hidden="true"
+          >
+            <path d="m9 21 8-14m4 20 13-4" />
+            <circle cx="27" cy="42" r="3.25" />
+          </svg>
+        </div>
         <p>
           A collaborative message wall for the world.
           <br />
