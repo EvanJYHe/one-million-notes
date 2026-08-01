@@ -372,13 +372,13 @@ textarea:focus-visible {
 .title-accent {
   position: absolute;
   top: 48%;
-  width: clamp(24px, 2vw, 32px);
+  width: clamp(30px, 2.8vw, 42px);
   height: auto;
   overflow: visible;
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 5;
+  stroke-width: 5.5;
   pointer-events: none;
 }
 

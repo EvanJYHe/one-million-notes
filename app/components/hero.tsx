@@ -26,7 +26,7 @@ export function Hero({ noteCount }: HeroProps) {
             viewBox="0 0 46 64"
             aria-hidden="true"
           >
-            <path d="m13 12 10 12M7 32h16m-10 21 11-9" />
+            <path d="m22 12 15 14M12 32h27m-18 21 16-11" />
           </svg>
           <h1>One Million Notes</h1>
           <svg
@@ -34,8 +34,8 @@ export function Hero({ noteCount }: HeroProps) {
             viewBox="0 0 46 64"
             aria-hidden="true"
           >
-            <path d="m9 21 8-14m4 20 13-4" />
-            <circle cx="27" cy="42" r="3.25" />
+            <path d="m5 21 8-14m4 20 13-4" />
+            <circle cx="23" cy="42" r="3.25" />
           </svg>
         </div>
         <p>
