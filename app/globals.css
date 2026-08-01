@@ -801,6 +801,19 @@ textarea:focus-visible {
     height: 45px;
   }
 
+  .brand-mark {
+    width: 56px;
+    height: 51px;
+    overflow: hidden;
+    place-items: center start;
+  }
+
+  .brand-lockup .brand-mark img {
+    width: 68px;
+    max-width: none;
+    height: 51px;
+  }
+
   .add-note-button {
     min-height: 42px;
     padding: 0 14px;
