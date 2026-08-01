@@ -59,20 +59,6 @@ body.intro-is-active {
   will-change: transform;
 }
 
-.intro-splash::before {
-  position: absolute;
-  width: min(66vw, 720px);
-  aspect-ratio: 1;
-  background: rgba(255, 255, 255, 0.28);
-  border: 1px solid rgba(199, 123, 57, 0.12);
-  border-radius: 50%;
-  box-shadow:
-    0 0 0 34px rgba(255, 255, 255, 0.08),
-    0 0 0 72px rgba(255, 255, 255, 0.04);
-  content: "";
-  animation: intro-halo-in 780ms cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
 .intro-splash.is-exiting {
   animation: intro-curtain-out 650ms cubic-bezier(0.76, 0, 0.24, 1) forwards;
 }
@@ -204,18 +190,6 @@ body.intro-is-active {
 @keyframes intro-rule-fill {
   to {
     transform: translateX(0);
-  }
-}
-
-@keyframes intro-halo-in {
-  from {
-    opacity: 0;
-    transform: scale(0.72);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
   }
 }
 
@@ -793,10 +767,6 @@ textarea:focus-visible {
 }
 
 @media (max-width: 620px) {
-  .intro-splash::before {
-    width: 120vw;
-  }
-
   .intro-splash__mark {
     width: 138px;
   }
