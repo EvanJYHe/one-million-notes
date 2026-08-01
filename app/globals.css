@@ -383,6 +383,7 @@ textarea:focus-visible {
 }
 
 .title-accent-left {
+  top: 16%;
   left: 0;
   stroke: #8f4c20;
   transform: translate(-102%, -50%);
