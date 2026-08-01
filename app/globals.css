@@ -372,27 +372,27 @@ textarea:focus-visible {
 .title-accent {
   position: absolute;
   top: 48%;
-  width: clamp(28px, 3vw, 46px);
+  width: clamp(24px, 2vw, 32px);
   height: auto;
   overflow: visible;
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 6;
+  stroke-width: 5;
   pointer-events: none;
 }
 
 .title-accent-left {
   left: 0;
   stroke: #8f4c20;
-  transform: translate(-110%, -50%);
+  transform: translate(-102%, -50%);
 }
 
 .title-accent-right {
   right: 0;
   fill: #c37b28;
   stroke: #c37b28;
-  transform: translate(110%, -50%);
+  transform: translate(102%, -50%);
 }
 
 .title-accent-right circle {
