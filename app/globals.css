@@ -811,11 +811,21 @@ textarea:focus-visible {
   .hero {
     grid-template-columns: minmax(0, 1fr);
     gap: 0;
-    min-height: 156px;
+    min-height: 176px;
   }
 
   .hero-art {
-    display: none;
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    display: grid;
+    width: clamp(76px, 23vw, 92px);
+    height: auto;
+  }
+
+  .hero-art img {
+    width: 100%;
+    height: auto;
   }
 
   .hero-copy {
@@ -847,7 +857,7 @@ textarea:focus-visible {
   }
 
   .hero-copy p {
-    max-width: 38ch;
+    max-width: 30ch;
     margin: 10px auto 0;
     font-size: clamp(0.76rem, 3.2vw, 0.88rem);
     text-align: center;
