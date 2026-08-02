@@ -24,6 +24,7 @@ visual variations derived from their position on the wall.
 | Interface | Next.js 15, React 19, TypeScript, handcrafted CSS |
 | Runtime | Cloudflare Workers via OpenNext, with a Vercel mirror |
 | Database | Cloudflare D1 |
+| Observability | Cloudflare and Vercel Web Analytics, plus Workers observability |
 | Large-list rendering | `react-window` and `react-virtualized-auto-sizer` |
 | Moderation | Local validation with optional Gemini classification |
 | Tooling | Wrangler, ESLint, TypeScript |

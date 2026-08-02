@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import Script from "next/script";
 import "@fontsource/architects-daughter/400.css";
 import "@fontsource/chewy/400.css";
 import "@fontsource-variable/dynapuff/wght.css";
@@ -13,6 +15,7 @@ const siteUrl =
   "https://one-million-notes.evan-he24.workers.dev";
 const siteDescription =
   "Join a collaborative message wall for the world. Share a thought, spread some joy, and help build a collection of one million notes.";
+const cloudflareAnalyticsToken = "f9087aeeb51f4407b6c25e5ebbf57912";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -69,7 +72,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        {process.env.VERCEL_ENV === "production" && (
+          <>
+            <Analytics />
+            <Script
+              id="cloudflare-web-analytics"
+              type="module"
+              src="https://static.cloudflareinsights.com/beacon.min.js"
+              data-cf-beacon={JSON.stringify({
+                token: cloudflareAnalyticsToken,
+              })}
+            />
+          </>
+        )}
+      </body>
     </html>
   );
 }
