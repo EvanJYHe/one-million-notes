@@ -356,13 +356,6 @@ textarea:focus-visible {
   pointer-events: none;
 }
 
-.title-accent-left {
-  top: 18%;
-  left: 0;
-  stroke: #8f4c20;
-  transform: translate(-102%, -50%);
-}
-
 .title-accent-right {
   right: 0;
   fill: #c37b28;

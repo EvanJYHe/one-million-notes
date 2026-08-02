@@ -21,13 +21,6 @@ export function Hero({ noteCount }: HeroProps) {
 
       <div className="hero-copy">
         <div className="hero-title">
-          <svg
-            className="title-accent title-accent-left"
-            viewBox="0 0 46 64"
-            aria-hidden="true"
-          >
-            <path d="m24 13 13 10M20 29l12 3M19 43h9" />
-          </svg>
           <h1>One Million Notes</h1>
           <svg
             className="title-accent title-accent-right"
